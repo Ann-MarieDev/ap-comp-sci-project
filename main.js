@@ -17,6 +17,9 @@ let hungryScore = 0;
 // Keeps track of how much the pet needs to be entertained 
 let playScore = 0;
 
+// Keeps track if the pet is sick
+let sickScore = 0;
+
 //--------------------------------------Functions-------------------------------------------------
 // Checks pet stats
 function stats(){
@@ -53,6 +56,45 @@ function play(){
     playScore = 10;
     stats();
 }
+
+// Lose stats over time
+function loseSleep(){
+    if (sleepScore <= 0 || sleepScore >= 10){
+        sleepScore = sleepScore - 1;
+        stats();
+    } else {
+        sickScore == sickScore + 1;
+    }
+    
+}
+
+function loseHunger(){
+    if (hungryScore <= 0 || hungryScore >= 10){
+        hungryScore = hungryScore - 1;
+        stats();
+    } else {
+        sickScore == sickScore + 1;
+    }
+ 
+}
+
+function losePlay(){
+    if (playScore <= 0 || playScore >= 10){
+        playScore = playScore - 1;
+        stats();
+    } else {
+        sickScore == sickScore + 1;
+    }
+ 
+}
+
+// Lose stats over time
+setInterval(loseSleep(), 60000);
+setInterval(loseHunger(), 20000);
+setInterval(losePlay(), 45000);
+
+
+
 
 //---------------------------------------Player inputs-----------------------------------------------
 // 
