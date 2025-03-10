@@ -20,7 +20,14 @@ let playScore = 0;
 // Keeps track if the pet is sick
 let sickScore = 0;
 
+// Set sick to false
+let sick = false;
+
+// Time being sick
+let sickTime = 0;
+
 //--------------------------------------Functions-------------------------------------------------
+//--------------------Pet Stats------------------------
 // Checks pet stats
 function stats(){
     // Needs sleep
@@ -39,6 +46,7 @@ function stats(){
     }
 }
 
+//--------------------Restore Pet Stats------------------------
 // Puts pet to sleep -- +restores sleep
 function sleep(){
     sleepScore = 10;
@@ -57,6 +65,7 @@ function play(){
     stats();
 }
 
+//--------------------Lose Pet Stats------------------------
 // Lose stats over time
 function loseSleep(){
     if (sleepScore <= 0 || sleepScore >= 10){
@@ -67,7 +76,6 @@ function loseSleep(){
     }
     
 }
-
 function loseHunger(){
     if (hungryScore <= 0 || hungryScore >= 10){
         hungryScore = hungryScore - 1;
@@ -93,7 +101,27 @@ setInterval(loseSleep(), 60000);
 setInterval(loseHunger(), 20000);
 setInterval(losePlay(), 45000);
 
+//--------------------Sick Pet------------------------
+// Stops everything if pet dies
+function die(){
+    null;
+}
 
+// Sets pet to sick if sickscore == 10
+if (sickScore == 10){
+    sick == true;
+}
+// Pet dies if sick for too long
+if (sick == true){
+    setInterval(function(){
+        sickTime++;
+
+        if (sickTime >= 600){
+            die();
+            clearInterval(this);
+        }
+    }, 1000);
+}
 
 
 //---------------------------------------Player inputs-----------------------------------------------
