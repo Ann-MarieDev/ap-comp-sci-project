@@ -1,140 +1,335 @@
-/* General Reset */
+/* Fixes brokeness */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body and Background */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9; /* Light pastel background */
-    color: #555; /* Darker text for better readability */
-    text-align: center;
-    padding: 0; /* Removed padding to eliminate white space */
-    min-height: 100vh; /* Ensure full viewport height */
+    font-family: 'Nunito', sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    margin: 0; /* Ensure no margin on body */
+    background-image: radial-gradient(#d9f0ff 10%, transparent 11%), 
+                      radial-gradient(#d9f0ff 10%, transparent 11%);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
 }
 
-/* Header Styling */
+/* Header Styles */
 header {
-    background-color: #f4a7b9; /* Pastel pink */
-    color: #fff;
-    padding: 10px 30px; /* Reduced padding */
-    width: 100%; /* Full width of the page */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 0; /* Ensure no margin on header */
-}
-
-/* Align header title left */
-header h1 {
-    font-size: 32px; /* Slightly smaller title */
-    font-weight: bold;
-    text-align: left; /* Left-align the title */
-}
-
-/* Main Content Layout */
-.container {
+    background-color: #ffb6c1;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: space-between; /* Spread out the content between pet, buttons, and notifications */
+    justify-content: center;
     align-items: center;
-    width: 100%; /* Full width of the container */
-    height: calc(100vh - 50px); /* Adjust container height to account for header */
-    padding: 20px; /* Added some padding for spacing */
 }
 
-/* Left Section (Buttons) */
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Bubblegum Sans', cursive;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 2.5rem;
+}
+
+.sparkles {
+    font-size: 1.8rem;
+    margin: 0 10px;
+    animation: sparkle 2s infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+}
+
+.github-link {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.github-link:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Main */
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Pet and Stats  */
+.pet-stats-wrapper {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* Stats Section */
+.stats-section {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    flex: 1;
+    min-width: 300px;
+}
+
+.stats-section h2 {
+    font-family: 'Bubblegum Sans', cursive;
+    color: #7986cb;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pet-status {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.status-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.status-bar span {
+    width: 80px;
+    text-align: right;
+    font-weight: bold;
+    color: #555;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 15px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 75%;
+    border-radius: 10px;
+}
+
+#energy-bar {
+    background-color: #9ec3ff;
+}
+
+#hunger-bar {
+    background-color: #ffac81;
+    width: 60%;
+}
+
+#happiness-bar {
+    background-color: #c4f5ae;
+    width: 85%;
+}
+
+/* Pet */
+.pet-container {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#pet-image {
+    max-width: 180px;
+    height: auto;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+#pet-image:hover {
+    transform: scale(1.05);
+}
+
+.pet-mood {
+    background-color: #fff8e8;
+    border-radius: 20px;
+    padding: 8px 15px;
+    display: inline-block;
+    font-weight: bold;
+    color: #ff9e7d;
+    border: 2px dashed #ffcdb2;
+}
+
+/* Actions */
+.control-panel {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Buttons */
 .buttons {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 150px;
-    margin-right: 10px; /* Reduced margin */
-    justify-content: center;
+    gap: 1rem;
+    flex: 1;
+    min-width: 200px;
 }
 
-button {
-    background-color: #ffb6c1; /* Pastel pink */
-    color: #fff;
-    padding: 10px 20px; /* Reduced padding */
-    margin: 8px 0; /* Reduced margin between buttons */
+.action-button {
+    padding: 15px;
     border: none;
-    border-radius: 50px; /* Rounded edges for buttons */
-    font-size: 18px;
+    border-radius: 50px;
+    background-color: #ffd6e0;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-button:hover {
-    background-color: #ff7a8b; /* Slightly darker pink */
-    transform: scale(1.1); /* Slightly enlarge the button when hovered */
+.action-button i {
+    font-size: 1.2rem;
 }
 
-button:active {
-    transform: scale(0.9); /* Button slightly shrinks when clicked */
+.action-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Center Section (Pet Image) */
-.pet-area {
-    width: 250px; /* Reduced width */
-    height: 250px; /* Reduced height */
+.action-button:active {
+    transform: translateY(0);
+}
+
+#sleep {
+    background-color: #d8c8ff;
+    color: #5b3e96;
+}
+
+#eat {
+    background-color: #ffd68a;
+    color: #b06000;
+}
+
+#play {
+    background-color: #a8e6cf;
+    color: #2d8a68;
+}
+
+
+/* Footer */
+footer {
+    background-color: #ffb6c1;
+    padding: 1rem;
+    text-align: center;
+    margin-top: auto;
+    color: #fff;
+}
+
+.footer-content {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid #ffb6c1;
-    border-radius: 10px;
-    background-color: #fff;
-    flex-grow: 1; /* Allow the pet area to take up the remaining space */
-    max-width: 45%; /* Limit max width */
-    margin: 0; /* Removed margin */
-    padding: 0; /* Removed padding */
+    gap: 10px;
 }
 
-.pet-area img {
-    max-width: 80%;
-    max-height: 80%;
-    object-fit: contain;
-}
-
-/* Right Section (Notifications) */
-.notifications {
-    width: 250px;
-    background-color: #f4a7b9; /* Pastel pink */
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 250px; /* Same height as pet area */
+.paw-prints {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    gap: 5px;
 }
 
-.notifications h2 {
-    font-size: 20px; /* Slightly smaller font size for the title */
-    margin-bottom: 10px; /* Reduced margin */
+.fa-paw {
+    font-size: 0.8rem;
+    animation: bounce 2s infinite;
 }
 
-#notification-area {
-    background-color: #ffffff;
-    color: #333;
-    padding: 10px;
-    border-radius: 5px;
-    flex-grow: 1;
-    overflow-y: auto;
-    margin-top: 10px;
+.fa-paw:nth-child(2) {
+    animation-delay: 0.3s;
 }
 
-/* Footer Styling */
-footer {
-    background-color: #f4a7b9; /* Pastel pink */
-    color: #fff;
-    padding: 10px; /* Reduced padding */
-    width: 100%; /* Full width of the page */
-    text-align: center;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow at the top of the footer */
-    margin: 0; /* Ensure no margin on footer */
+.fa-paw:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .pet-stats-wrapper {
+        flex-direction: column-reverse;
+    }
+    
+    .control-panel {
+        flex-direction: column;
+    }
+    
+    .buttons {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .action-button {
+        flex: 1;
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .buttons {
+        flex-direction: column;
+    }
+    
+    .pet-container, .stats-section {
+        padding: 1rem;
+    }
+    
+    #pet-image {
+        max-width: 150px;
+    }
 }

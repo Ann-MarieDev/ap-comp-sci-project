@@ -1,44 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--Meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Title web browser-->
     <title>Pet Mini-Game</title>
+
+    <!--Icon lib-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!--Font lib-->
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!--Links page to main.js-->
     <script src="main.js"></script>
+
+    <!--Links page to main.css-->
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <!-- Header -->
     <header>
-        <h1>Pet Mini-Game</h1>
+        <div class="header-content">
+            <h1>Pet Mini-Game</h1>
+        </div>
+        <!--My github :D -->
+        <a href="https://github.com/Ann-MarieDev" class="github-link" target="_blank">
+            <i class="fab fa-github"></i>
+        </a>
     </header>
 
-    <!-- Main Content Area -->
+    <!--Main Content-->
     <div class="container">
-        <!-- Left Section (Buttons) -->
-        <div class="buttons">
-            <button id="sleep">Sleep</button>
-            <button id="eat">Feed</button>
-            <button id="play">Play</button>
+
+        <!--Pet and Stats Section-->
+        <div class="pet-stats-wrapper">
+
+            <!--Stats Section-->
+            <div class="stats-section">
+                <!--Progress bars-->
+                <h2>Pet Stats <i class="fas fa-chart-line"></i></h2>
+                <div class="pet-status">
+                    <div class="status-bar">
+                        <span>Energy</span>
+                        <div class="progress-bar">
+                            <div class="progress" id="energy-bar"></div>
+                        </div>
+                    </div>
+                    <div class="status-bar">
+                        <span>Hunger</span>
+                        <div class="progress-bar">
+                            <div class="progress" id="hunger-bar"></div>
+                        </div>
+                    </div>
+                    <div class="status-bar">
+                        <span>Happiness</span>
+                        <div class="progress-bar">
+                            <div class="progress" id="happiness-bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Pet Area-->
+            <div class="pet-container">
+                <!--placeholder until i get spirtes-->
+                <img src="pet.png" id="pet-image" alt="Your Pet <3">
+                <div class="pet-mood">
+                    <span id="current-mood">Happy</span>
+                </div>
+            </div>
         </div>
 
-        <!-- Center Section (Pet Image) -->
-        <div class="pet-area">
-            <img src="pet.png" id="pet-image" alt="Your Pet">
-        </div>
-
-        <!-- Right Section (Notifications) -->
-        <div class="notifications">
-            <h2>Notifications</h2>
-            <div id="notification-area">
-                <!-- Notifications will appear here -->
+        <!-- Actions -->
+        <div class="control-panel">
+            <!-- Buttons -->
+            <div class="buttons">
+                <button id="sleep" class="action-button">
+                    <i class="fas fa-moon"></i>
+                    Sleep
+                </button>
+                <button id="eat" class="action-button">
+                    <i class="fas fa-drumstick-bite"></i>
+                    Feed
+                </button>
+                <button id="play" class="action-button">
+                    <i class="fas fa-gamepad"></i>
+                    Play
+                </button>
             </div>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Pet Mini-Game</p>
+        <div class="footer-content">
+            <p>&copy; 2025 Pet Mini-Game by Gracie Hutchins</p>
+            <div class="paw-prints">
+                <i class="fas fa-paw"></i>
+                <i class="fas fa-paw"></i>
+                <i class="fas fa-paw"></i>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
