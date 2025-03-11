@@ -1,24 +1,44 @@
-<html>
-    <head>
-        <title>Pet Mini-Game</title>
-        <script src="main.js"></script>
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Mini-Game</title>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
 <body>
     <!-- Header -->
     <header>
         <h1>Pet Mini-Game</h1>
     </header>
 
-    <!-- Main -->
-    <main>
-        <button id = "sleep"> Sleep </button>
-        <button id = "eat"> Feed </button>
-        <button id = "play"> Play </button>
+    <!-- Main Content Area -->
+    <div class="container">
+        <!-- Left Section (Buttons) -->
+        <div class="buttons">
+            <button id="sleep">Sleep</button>
+            <button id="eat">Feed</button>
+            <button id="play">Play</button>
+        </div>
 
-    </main>
+        <!-- Center Section (Pet Image) -->
+        <div class="pet-area">
+            <img src="pet.png" id="pet-image" alt="Your Pet">
+        </div>
+
+        <!-- Right Section (Notifications) -->
+        <div class="notifications">
+            <h2>Notifications</h2>
+            <div id="notification-area">
+                <!-- Notifications will appear here -->
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
+        <p>&copy; 2025 Pet Mini-Game</p>
     </footer>
 </body>
 </html>

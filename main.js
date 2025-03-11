@@ -9,13 +9,13 @@ window.onload = function() {
 
 //--------------------------------------Variables-------------------------------------------------
 // Keeps track of how much sleep pet needs
-let sleepScore = 0;
+let sleepScore = 10;
 
 // Keeps track of how hungry pet is
-let hungryScore = 0;
+let hungryScore = 10;
 
 // Keeps track of how much the pet needs to be entertained 
-let playScore = 0;
+let playScore = 10;
 
 // Keeps track if the pet is sick
 let sickScore = 0;
@@ -74,7 +74,7 @@ function loseSleep(){
     } else {
         sickScore == sickScore + 1;
     }
-    
+    alert("Your pet needs sleep!");
 }
 function loseHunger(){
     if (hungryScore <= 0 || hungryScore >= 10){

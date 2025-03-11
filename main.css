@@ -1,0 +1,140 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Background */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9; /* Light pastel background */
+    color: #555; /* Darker text for better readability */
+    text-align: center;
+    padding: 0; /* Removed padding to eliminate white space */
+    min-height: 100vh; /* Ensure full viewport height */
+    display: flex;
+    flex-direction: column;
+    margin: 0; /* Ensure no margin on body */
+}
+
+/* Header Styling */
+header {
+    background-color: #f4a7b9; /* Pastel pink */
+    color: #fff;
+    padding: 10px 30px; /* Reduced padding */
+    width: 100%; /* Full width of the page */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0; /* Ensure no margin on header */
+}
+
+/* Align header title left */
+header h1 {
+    font-size: 32px; /* Slightly smaller title */
+    font-weight: bold;
+    text-align: left; /* Left-align the title */
+}
+
+/* Main Content Layout */
+.container {
+    display: flex;
+    justify-content: space-between; /* Spread out the content between pet, buttons, and notifications */
+    align-items: center;
+    width: 100%; /* Full width of the container */
+    height: calc(100vh - 50px); /* Adjust container height to account for header */
+    padding: 20px; /* Added some padding for spacing */
+}
+
+/* Left Section (Buttons) */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+    margin-right: 10px; /* Reduced margin */
+    justify-content: center;
+}
+
+button {
+    background-color: #ffb6c1; /* Pastel pink */
+    color: #fff;
+    padding: 10px 20px; /* Reduced padding */
+    margin: 8px 0; /* Reduced margin between buttons */
+    border: none;
+    border-radius: 50px; /* Rounded edges for buttons */
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #ff7a8b; /* Slightly darker pink */
+    transform: scale(1.1); /* Slightly enlarge the button when hovered */
+}
+
+button:active {
+    transform: scale(0.9); /* Button slightly shrinks when clicked */
+}
+
+/* Center Section (Pet Image) */
+.pet-area {
+    width: 250px; /* Reduced width */
+    height: 250px; /* Reduced height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ffb6c1;
+    border-radius: 10px;
+    background-color: #fff;
+    flex-grow: 1; /* Allow the pet area to take up the remaining space */
+    max-width: 45%; /* Limit max width */
+    margin: 0; /* Removed margin */
+    padding: 0; /* Removed padding */
+}
+
+.pet-area img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+/* Right Section (Notifications) */
+.notifications {
+    width: 250px;
+    background-color: #f4a7b9; /* Pastel pink */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 250px; /* Same height as pet area */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.notifications h2 {
+    font-size: 20px; /* Slightly smaller font size for the title */
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+#notification-area {
+    background-color: #ffffff;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #f4a7b9; /* Pastel pink */
+    color: #fff;
+    padding: 10px; /* Reduced padding */
+    width: 100%; /* Full width of the page */
+    text-align: center;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow at the top of the footer */
+    margin: 0; /* Ensure no margin on footer */
+}
