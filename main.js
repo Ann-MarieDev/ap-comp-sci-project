@@ -7,6 +7,52 @@ window.onload = function() {
     console.log("HTML/CSS LOADED"); // Page is fully loaded
 };
 
+//---------------------------------------Sprite Animations----------------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+    const petContainer = document.getElementById('pet');
+    
+    // Animation settings
+    const scale = 3; 
+    const baseSize = 32;
+    const scaledSize = baseSize * scale; 
+    
+    // Main logic to naimation
+    //Frame 1
+    const frame1 = document.createElement('img');
+    frame1.src = 'Sprites/New Piskel-1.png.png'; 
+    frame1.width = scaledSize;
+    frame1.height = scaledSize;
+    frame1.style.imageRendering = 'pixelated';
+    frame1.style.display = 'block';
+    
+    // Frame 2
+    const frame2 = document.createElement('img');
+    frame2.src = 'Sprites/New Piskel-2.png.png'; // Second frame image
+    frame2.width = scaledSize;
+    frame2.height = scaledSize;
+    frame2.style.imageRendering = 'pixelated';
+    frame2.style.display = 'none';
+    petContainer.appendChild(frame1);
+    petContainer.appendChild(frame2);
+    let showingFrame1 = true;
+
+    // 
+    function animatePet() {
+      if (showingFrame1) {
+        frame1.style.display = 'block';
+        frame2.style.display = 'none';
+      } else {
+        frame1.style.display = 'none';
+        frame2.style.display = 'block';
+      }
+      
+      showingFrame1 = !showingFrame1;
+    }
+    
+    // FPS
+    setInterval(animatePet, 1000); 
+  });
+
 //--------------------------------------Variables-------------------------------------------------
 // Keeps track of how much sleep pet needs
 let sleepScore = 10;

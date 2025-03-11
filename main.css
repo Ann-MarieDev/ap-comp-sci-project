@@ -1,3 +1,25 @@
+/* Pet CSS */
+#pet {
+    margin: 20px;
+    width: 96px; /* 32px × 3 */
+    height: 96px; /* 32px × 3 */
+}
+
+.pet-container{
+    background-image: url('Sprites/pixelbg.jpg');
+    background-size: cover; /* Makes sure the image covers the whole container */
+    background-position: bottom; /* Centers the image */
+    background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+}
+
+img {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+
+
 /* Fixes brokeness */
 * {
     margin: 0;
